@@ -6,10 +6,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class Customer {
 
-    public Scene getView(){
+
+    private Home mainMenu = new Home();
+
+    public Scene getView(Stage stage){
         GridPane layout = new GridPane();
         layout.setHgap(10);
         layout.setVgap(10);
@@ -24,6 +28,7 @@ public class Customer {
         Label yearPrice = new Label("Jaarlijks voorschot:");
         TextField yearPriceText = new TextField();
         Button buttonSave = new Button("Opslaan");
+        Button backButton = new Button("Terug");
 
         //0-0
         layout.add(customerNumberText, 1, 0);
@@ -39,7 +44,9 @@ public class Customer {
         layout.add(yearPriceText, 1 , 3);
         //0-4
         layout.add(buttonSave, 0 , 4);
+        layout.add(backButton, 1, 4);
 
+        backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
 
         layout.setAlignment(Pos.CENTER);
         Scene scene = new Scene(layout, 500 , 500);

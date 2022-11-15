@@ -7,10 +7,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class Usage {
 
-    public Scene getView(){
+    private Home mainMenu = new Home();
+
+
+    public Scene getView(Stage stage){
         GridPane layout = new GridPane();
         layout.setHgap(10);
         layout.setVgap(10);
@@ -29,6 +33,7 @@ public class Usage {
         DatePicker dateUntilPicker = new DatePicker();
 
         Button buttonSave = new Button("Opslaan");
+        Button backButton = new Button("Terug");
 
         //0-0
         layout.add(energieInKWH, 0, 0);
@@ -44,6 +49,10 @@ public class Usage {
         layout.add(dateUntilPicker, 1 , 3);
         //0-4
         layout.add(buttonSave, 0 , 4);
+        layout.add(backButton, 1, 4);
+
+        backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
+
 
 
         layout.setAlignment(Pos.CENTER);

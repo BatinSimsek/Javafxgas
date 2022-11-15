@@ -1,14 +1,17 @@
 package gui.gas;
 
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class Gas {
 
-    public Scene getView(){
+    private Home mainMenu = new Home();
+
+
+    public Scene getView(Stage stage){
         GridPane layout = new GridPane();
         layout.setHgap(10);
         layout.setVgap(10);
@@ -24,10 +27,12 @@ public class Gas {
         DatePicker dateUntilPicker = new DatePicker();
 
         Button buttonSave = new Button("Opslaan");
+        Button backButton = new Button("Terug");
+
 
         //0-0
-        layout.add(gasPrice, 1, 0);
-        layout.add(gasPriceNumber, 0, 0);
+        layout.add(gasPrice, 0, 0);
+        layout.add(gasPriceNumber, 1, 0);
         //0-1
         layout.add(dateWhen, 0, 1);
         layout.add(dateWhenPicker, 1 , 1);
@@ -36,6 +41,10 @@ public class Gas {
         layout.add(dateUntilPicker, 1 , 2);
         //0-4
         layout.add(buttonSave, 0 , 4);
+        layout.add(backButton, 1, 4);
+
+        backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
+
 
 
         layout.setAlignment(Pos.CENTER);

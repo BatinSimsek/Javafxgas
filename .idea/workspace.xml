@@ -6,13 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="58a20835-5e45-4de8-bc6e-97e7b79caa05" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gas/Gas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gas/Gas.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gas/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Current.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Current.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Gas.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Gas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Usage.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Usage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Current.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Current.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Gas.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Gas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Home.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/NumFieldFX$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/NumFieldFX.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Usage.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Usage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +52,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration name="Home" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -78,6 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668505272421</updated>
       <workItem from="1668536820089" duration="792000" />
+      <workItem from="1668539291603" duration="1690000" />
     </task>
     <servers />
   </component>
@@ -94,5 +108,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

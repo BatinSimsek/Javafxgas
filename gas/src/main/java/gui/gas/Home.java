@@ -10,18 +10,26 @@ import javafx.stage.Stage;
 
 public class Home extends Application {
 
-    Customer customersView = new Customer();
-    Current currentsView = new Current();
-    Gas usageGasView = new Gas();
-    Usage usagesView = new Usage();
 
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Energiebedrijf");
+    public void start(Stage stage) throws Exception {
+        stage.setTitle("Energiebedrijf");
+        stage.setScene(this.getView(stage));
+        stage.show();
+    }
+
+
+    public Scene getView(Stage stage){
+
+        Customer customersView = new Customer();
+        Current currentsView = new Current();
+        Gas usageGasView = new Gas();
+        Usage usagesView = new Usage();
+
 
         Button customer = new Button();
         Button currents = new Button();
@@ -39,15 +47,15 @@ public class Home extends Application {
         layout.setSpacing(25);
         layout.setAlignment(Pos.CENTER);
 
-        customer.setOnAction((event) -> primaryStage.setScene(customersView.getView()));
-        currents.setOnAction((event) -> primaryStage.setScene(currentsView.getView()));
-        usageGas.setOnAction((event) -> primaryStage.setScene(usageGasView.getView()));
-        usages.setOnAction((event) -> primaryStage.setScene(usagesView.getView()));
+        customer.setOnAction((event) -> stage.setScene(customersView.getView(stage)));
+        currents.setOnAction((event) -> stage.setScene(currentsView.getView(stage)));
+        usageGas.setOnAction((event) -> stage.setScene(usageGasView.getView(stage)));
+        usages.setOnAction((event) -> stage.setScene(usagesView.getView(stage)));
 
 
 
         Scene scene = new Scene(layout, 300, 250);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        return scene;
     }
 }
+
