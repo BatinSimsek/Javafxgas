@@ -5,15 +5,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 
 public class Customer {
 
     public Scene getView(){
         GridPane layout = new GridPane();
+        layout.setHgap(10);
+        layout.setVgap(10);
+
 
         Label custommerNumber = new Label("Klantnummer:");
         TextField customerNumberText = new TextField();
@@ -32,9 +32,13 @@ public class Customer {
         layout.add(firstName, 0, 1);
         layout.add(firstNameText, 1 , 1);
         //0-2
-
-
-
+        layout.add(sureName, 0, 2);
+        layout.add(sureNameText, 1 , 2);
+        //0-3
+        layout.add(yearPrice, 0, 3);
+        layout.add(yearPriceText, 1 , 3);
+        //0-4
+        layout.add(buttonSave, 0 , 4);
 
 
         layout.setAlignment(Pos.CENTER);
