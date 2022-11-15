@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gas/Gas.iml" filepath="$PROJECT_DIR$/gas/Gas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Javafxgas.iml" filepath="$PROJECT_DIR$/.idea/Javafxgas.iml" />
+    </modules>
+  </component>
+</project>
