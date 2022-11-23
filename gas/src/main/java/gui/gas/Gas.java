@@ -1,13 +1,18 @@
 package gui.gas;
-
+//import class
+import Domain.GasCustomer;
+import Domain.UsageCustomer;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.util.Date;
+
 public class Gas {
 
+    private UsageCustomer information = new UsageCustomer();
     private Home mainMenu = new Home();
 
 
@@ -42,6 +47,17 @@ public class Gas {
         //0-4
         layout.add(buttonSave, 0 , 4);
         layout.add(backButton, 1, 4);
+
+        buttonSave.setOnAction((actionEvent -> {
+            double price = Double.parseDouble(gasPriceNumber.getText());
+            DatePicker datenow = dateWhenPicker;
+            DatePicker dateuntil = dateUntilPicker;
+
+
+            GasCustomer gasperson = new GasCustomer(price, datenow, dateuntil);
+            information.addGasCustomer(gasperson);
+            information.printGas();
+        }));
 
         backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
 

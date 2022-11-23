@@ -1,22 +1,29 @@
 package Domain;
 
-import java.util.Date;
+import javafx.scene.control.DatePicker;
+
 
 public class EnergieCostumer {
 
     private double energieMoney;
-    private Date dateWhen;
-    private Date dateThen;
+    private DatePicker dateWhen;
+    private DatePicker dateThen;
+
+    public EnergieCostumer(double energieMoney, DatePicker dateWhen, DatePicker dateThen) {
+        this.energieMoney = energieMoney;
+        this.dateWhen = dateWhen;
+        this.dateThen = dateThen;
+    }
 
     public double getEnergieMoney() {
         return energieMoney;
     }
 
-    public Date getDateWhen() {
+    public DatePicker getDateWhen() {
         return dateWhen;
     }
 
-    public Date getDateThen() {
+    public DatePicker getDateThen() {
         return dateThen;
     }
 }

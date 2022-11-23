@@ -2,6 +2,8 @@ package gui.gas;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import Domain.EnergieCostumer;
+import Domain.UsageCustomer;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,6 +15,7 @@ import javafx.stage.Stage;
 
 public class Current {
 
+    private UsageCustomer information = new UsageCustomer();
     private Home mainMenu = new Home();
 
 
@@ -25,15 +28,15 @@ public class Current {
         Label energieKWH = new Label("Tarief kwh:");
         TextField energieKWHText = new TextField();
 
-        energieKWHText.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    energieKWHText.setText(newValue.replaceAll("[^\\d]", ""));
-                }
-            }
-        });
+//        energieKWHText.textProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue,
+//                                String newValue) {
+//                if (!newValue.matches("\\d*")) {
+//                    energieKWHText.setText(newValue.replaceAll("[^\\d]", ""));
+//                }
+//            }
+//        });
 
         Label dateWhen = new Label("Datum vanaf:");
         DatePicker dateWhenPicker = new DatePicker();
@@ -57,19 +60,18 @@ public class Current {
         layout.add(buttonSave, 0 , 4);
         layout.add(backButton, 1, 4);
 
-        backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
-
         buttonSave.setOnAction((actionEvent -> {
-            if (energieKWHText.getText() == null || energieKWHText.getText().trim().isEmpty()) {
-                System.out.println("mag niet");
-            } else {
-                String text = energieKWHText.getText();
-                System.out.println(text);
-            }
+            double energieCustom = Double.parseDouble(energieKWHText.getText());
+            DatePicker datewhen = dateWhenPicker;
+            DatePicker dateuntil = dateUntilPicker;
 
+            EnergieCostumer energie = new EnergieCostumer(energieCustom, datewhen, dateuntil);
+            information.energieCustomer(energie);
+            information.printEnergie();
 
         }));
 
+        backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
 
 
         layout.setAlignment(Pos.CENTER);

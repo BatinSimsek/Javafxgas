@@ -1,5 +1,6 @@
 package gui.gas;
 
+import Domain.UsageCustomer;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 
 public class Usage {
 
+    private UsageCustomer usage = new UsageCustomer();
     private Home mainMenu = new Home();
 
 
@@ -20,36 +22,15 @@ public class Usage {
         layout.setVgap(10);
 
 
-        Label energieInKWH = new Label("Stroom in kwh:");
-        TextField energieInKWHText = new TextField();
-
-        Label gasM3 = new Label("Gas per m3:");
-        TextField gasM3Text = new TextField();
-
-        Label dateWhen = new Label("Datum startperiode:");
-        DatePicker dateWhenPicker = new DatePicker();
-
-        Label dateUntil = new Label("Datum Eindperiode:");
-        DatePicker dateUntilPicker = new DatePicker();
-
-        Button buttonSave = new Button("Opslaan");
         Button backButton = new Button("Terug");
+        Button check = new Button("check");
 
-        //0-0
-        layout.add(energieInKWH, 0, 0);
-        layout.add(energieInKWHText, 1, 0);
-        //0-1
-        layout.add(gasM3, 0, 1);
-        layout.add(gasM3Text, 1, 1);
-        //0-2
-        layout.add(dateWhen, 0, 2);
-        layout.add(dateWhenPicker, 1 , 2);
-        //0-3
-        layout.add(dateUntil, 0, 3);
-        layout.add(dateUntilPicker, 1 , 3);
-        //0-4
-        layout.add(buttonSave, 0 , 4);
         layout.add(backButton, 1, 4);
+        layout.add(check, 1, 5);
+
+        check.setOnAction((event) -> {
+            usage.checkPrice();
+        });
 
         backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
 
