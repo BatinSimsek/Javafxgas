@@ -4,6 +4,7 @@ import Domain.Customers;
 import Domain.UsageCustomer;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -54,17 +55,22 @@ public class Customer {
 
         buttonSave.setOnAction((actionEvent -> {
 
-            int number = Integer.parseInt(customerNumberText.getText());
-            String name = firstNameText.getText();
-            String surename = sureName.getText();
-            double money = Double.parseDouble(yearPriceText.getText());
+            try {
+                int number = Integer.parseInt(customerNumberText.getText());
+                String name = firstNameText.getText();
+                String surename = sureName.getText();
+                double money = Double.parseDouble(yearPriceText.getText());
 
-            Customers person = new Customers(number, name, surename, money);
+                Customers person = new Customers(number, name, surename, money);
 
-            //toevoegen van persoon
-            information.addCustomer(person);
-            //print infromatie uit om te testen
-            information.printCustomer();
+                //toevoegen van persoon
+                information.addCustomer(person);
+            } catch (NumberFormatException a){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Moet een nummer zijn");
+                alert.setContentText("Check of je datum of nummer goed ingevuld is. " + String.valueOf(a));
+                alert.show();
+            }
         }));
 
         // gaat terug naar home scherm

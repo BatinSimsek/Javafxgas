@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58a20835-5e45-4de8-bc6e-97e7b79caa05" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gas/target/classes/Domain/Customers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gas/target/classes/Domain/EnergieCostumer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gas/target/classes/Domain/GasCustomer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gas/target/classes/Domain/UsageCustomer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/Domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/Domain/Customers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/Domain/EnergieCostumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/Domain/EnergieCostumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/Domain/GasCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/Domain/GasCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/Domain/UsageCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/Domain/UsageCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Current.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Current.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Gas.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Gas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Usage.java" beforeDir="false" afterPath="$PROJECT_DIR$/gas/src/main/java/gui/gas/Usage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Current$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Current.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Current.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Gas.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Gas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gas/target/classes/gui/gas/Usage.class" beforeDir="false" afterPath="$PROJECT_DIR$/gas/target/classes/gui/gas/Usage.class" afterDir="false" />
-    </list>
+    <list default="true" id="58a20835-5e45-4de8-bc6e-97e7b79caa05" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,15 +102,6 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/gas/src/main/java/Domain/UsageCustomer.java</url>
-          <line>25</line>
-          <properties class="Domain.UsageCustomer" method="checkPrice">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

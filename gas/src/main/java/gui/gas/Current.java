@@ -6,10 +6,7 @@ import Domain.EnergieCostumer;
 import Domain.UsageCustomer;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -27,16 +24,6 @@ public class Current {
 
         Label energieKWH = new Label("Tarief kwh:");
         TextField energieKWHText = new TextField();
-
-//        energieKWHText.textProperty().addListener(new ChangeListener<String>() {
-//            @Override
-//            public void changed(ObservableValue<? extends String> observable, String oldValue,
-//                                String newValue) {
-//                if (!newValue.matches("\\d*")) {
-//                    energieKWHText.setText(newValue.replaceAll("[^\\d]", ""));
-//                }
-//            }
-//        });
 
         Label dateWhen = new Label("Datum vanaf:");
         DatePicker dateWhenPicker = new DatePicker();
@@ -61,14 +48,20 @@ public class Current {
         layout.add(backButton, 1, 4);
 
         buttonSave.setOnAction((actionEvent -> {
-            double energieCustom = Double.parseDouble(energieKWHText.getText());
-            DatePicker datewhen = dateWhenPicker;
-            DatePicker dateuntil = dateUntilPicker;
 
-            EnergieCostumer energie = new EnergieCostumer(energieCustom, datewhen, dateuntil);
-            information.energieCustomer(energie);
-            information.printEnergie();
+            try{
+                double energieCustom = Double.parseDouble(energieKWHText.getText());
+                DatePicker datewhen = dateWhenPicker;
+                DatePicker dateuntil = dateUntilPicker;
 
+                EnergieCostumer energie = new EnergieCostumer(energieCustom, datewhen, dateuntil);
+                information.energieCustomer(energie);
+            } catch (NumberFormatException a){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Moet een nummer zijn");
+                alert.setContentText("Check of je datum of nummer goed ingevuld is. " + String.valueOf(a));
+                alert.show();
+            }
         }));
 
         backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));

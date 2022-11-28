@@ -48,16 +48,23 @@ public class Gas {
         layout.add(buttonSave, 0 , 4);
         layout.add(backButton, 1, 4);
 
+
         buttonSave.setOnAction((actionEvent -> {
-            double price = Double.parseDouble(gasPriceNumber.getText());
-            DatePicker datenow = dateWhenPicker;
-            DatePicker dateuntil = dateUntilPicker;
+            try {
+                double price = Double.parseDouble(gasPriceNumber.getText());
+                DatePicker datenow = dateWhenPicker;
+                DatePicker dateuntil = dateUntilPicker;
 
-
-            GasCustomer gasperson = new GasCustomer(price, datenow, dateuntil);
-            information.addGasCustomer(gasperson);
-            information.printGas();
+                GasCustomer gasperson = new GasCustomer(price, datenow, dateuntil);
+                information.addGasCustomer(gasperson);
+            } catch (NumberFormatException a){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Moet een nummer zijn");
+                alert.setContentText("Check of je datum of nummer goed ingevuld is. " + String.valueOf(a));
+                alert.show();
+            }
         }));
+
 
         backButton.setOnAction((actionEvent -> stage.setScene(mainMenu.getView(stage))));
 
