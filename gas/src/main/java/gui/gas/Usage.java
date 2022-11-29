@@ -19,17 +19,16 @@ public class Usage {
         layout.setVgap(10);
 
 
-
         Label gasPrice = new Label("Tarief gas:");
         TextField gasPriceNumber = new TextField();
 
         Label energieKWH = new Label("Tarief kwh:");
         TextField energieKWHText = new TextField();
 
-
         Button backButton = new Button("Terug");
         Button check = new Button("check");
 
+        layout.add(usage.myLabel, 0 , 2);
 
         layout.add(energieKWHText, 1, 0);
         layout.add(energieKWH, 0, 0);
@@ -46,10 +45,10 @@ public class Usage {
                 int b = Integer.parseInt(energieKWHText.getText());
                 usage.getInformation(a, b);
                 usage.checkPrice();
-                
+
             } catch (NumberFormatException a){
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Moet een nummer zijn");
+                alert.setTitle("Foutmelding");
                 alert.setContentText("Check of je datum of nummer goed ingevuld is. " + String.valueOf(a));
                 alert.show();
             }

@@ -3,24 +3,30 @@ package Domain;
 import java.util.ArrayList;
 
 public class UsageCustomer {
-    public static ArrayList<Customers> customers = new ArrayList<>();;
-    public static ArrayList<GasCustomer> gasCustomers = new ArrayList<>();;
+    public static ArrayList<Customers> customers = new ArrayList<>();
+    public static ArrayList<GasCustomer> gasCustomers = new ArrayList<>();
     public static ArrayList<EnergieCostumer> energieCustomer = new ArrayList<>();
-
     private int energy;
     private int gas;
+    public javafx.scene.control.Label myLabel = new javafx.scene.control.Label();
 
-    //toevoegen in een arraylist
     public void addCustomer(Customers customers) {
         UsageCustomer.customers.add(customers);
     }
-    public void addGasCustomer(GasCustomer gasCustomers) {UsageCustomer.gasCustomers.add(gasCustomers);}
-    public void energieCustomer(EnergieCostumer energieCustomer){UsageCustomer.energieCustomer.add(energieCustomer);}
 
-    public void getInformation(int e, int g){
+    public void addGasCustomer(GasCustomer gasCustomers) {
+        UsageCustomer.gasCustomers.add(gasCustomers);
+    }
+
+    public void energieCustomer(EnergieCostumer energieCustomer) {
+        UsageCustomer.energieCustomer.add(energieCustomer);
+    }
+
+    public void getInformation(int e, int g) {
         this.energy = e;
         this.gas = g;
     }
+
     public void checkPrice() {
         double total;
         double totalcost = 0;
@@ -28,11 +34,11 @@ public class UsageCustomer {
         double v1 = 0;
 
         for (Customers a : customers) {
-            for (GasCustomer g : gasCustomers){
-                for(EnergieCostumer e : energieCustomer){
+            for (Energie g : gasCustomers){
+                for(Energie e : energieCustomer){
                     totalcost = a.getYearMoney();
-                    v = this.energy * e.getEnergieMoney();
-                    v1 = this.gas * g.getGasMoney();
+                    v = this.energy * e.getMoney();
+                    v1 = this.gas * g.getMoney();
                 }
             }
         }
@@ -40,13 +46,11 @@ public class UsageCustomer {
         total = v + v1;
 
         if (totalcost > total) {
-            System.out.println("Je bespaar nog geld");
+            myLabel.setText("Je totaal geld is : " + totalcost + " Het Restanten is : " + String.valueOf( totalcost - total) + " Je bespaar geld!");
         } else if (totalcost < total) {
-            System.out.println("Je verlies geld");
+            myLabel.setText("Je verlies geld: "  + String.valueOf(totalcost - total));
         } else {
-            System.out.println("Je zit net in budget");
+            myLabel.setText("Je zit net in budget: " + totalcost + " Het totalen kosten energie: " + total);
         }
     }
-
-
 }

@@ -58,7 +58,7 @@ public class Current {
                 information.energieCustomer(energie);
             } catch (NumberFormatException a){
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Moet een nummer zijn");
+                alert.setTitle("Foutmelding");
                 alert.setContentText("Check of je datum of nummer goed ingevuld is. " + String.valueOf(a));
                 alert.show();
             }
